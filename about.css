@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+nav {
+  background: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #7b2cbf;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a.active, nav a:hover {
+  color: #7b2cbf;
+}
+
+.hero {
+  background: #e0bbf5;
+  padding: 4rem 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-content .text {
+  max-width: 50%;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+}
+
+.hero-content h3 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.hero-content p {
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+.hero-content .btn {
+  padding: 0.75rem 1.5rem;
+  background: #7b2cbf;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.btn-secondary {
+  background: #a17fd2;
+}
+
+.image img {
+  width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.page-section {
+  padding: 4rem 0;
+}
+
+.page-section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"rel="stylesheet"
+/>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="style.css" />
+        <title>web Design Mastery | Responsive portfolio </title>
+    </head>
+    <body>
+        <script src="main.js"></script>
+         <p id="demo">
+
+         </p>
+        <script>
+            
+
+            function validateform() {
+                let x= document.form["myform"]["fname"].value;
+                if (x==""){
+                    alert('name must be filled out');
+                    console.log('name must be filled out');
+                    return false;
+                }
+            }
+
+
+        </script>
+       
+        
+     <nav>
+        <div class="nav_content">
+            <div class="logo"><a href="#">Rohith</a></div>
+            <label for="ckeck" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+            <input type="checkbox" name="check" id="check">
+           <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+             </div>
+            </nav>
+            <section class="section">
+                <div class="section_container">
+                    <div class="content">
+                        <p class="subtitle">HELLO</p>
+                        <h1 class="title">
+                        I'm <span>Rohith<span> Web developer
+                        </h1>
+                        <p class="description">
+                            Welcome to my web developer portfolio I'm Rohith  a skilled and
+                            creative web developer with a passion for creating beautiful,
+                            responsive, ans user-friendly website, I've worke   d on a variety of
+                            web projects, ranging fron personal blogs to e-commerce platforms.
+                        </p>
+                       <div class="action_btns" >
+                        <button class="hire_me">Hire Me</button>
+                        <button class="hire_me">Portfolio</button>
+                       </div>
+                    </div>
+                    <div class="image">
+                        <img src="image.jpg" alt="profile" /> 
+                    </div>
+
+                    
+                
+            </section>
+          
+
+
+
+    <h2>Contactform</h2>
+                    <form id="form">
+                         <div class="input-group">
+                            <div class="input-field" id="nameField">
+                                 <input type="number" placeholder="name" />
+          </div> <br><br>
+                            <div class="input-field p-5" id="nameField">
+                                 <input type="email" placeholder="email" />
+                            </div>
+                </div>
+</form>
+
+  <section id="repos" class="mb-5">
+    <h2 class="mb-3"> Git hib repositories</h2>
+    <button id="loadRepoBtn" class="btn btn-secondary mb-3">show my repository</button>
+    <ul class="list-group" id="repo-list"></ul>
+</section>
+<script >const repolist = document.getElementById('repo-list');
+const loadReposBtn = document.getElementById('loadReposBtn');
+
+async function loadRepos() {
+    loadReposBtn.disabled = true;
+    loadReposBtn.textContent = `Loading...`;
+
+    try {
+        const res = await fetch('https://api.github.com/users/octocat/repos');
+        if (!res.ok) throw new Error('Fetch failed');
+
+        const repos = await res.json();
+
+        repolist.innerHTML = ''; // Clear previous list if needed
+
+        repos.forEach(r => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.innerHTML = `<a href="${r.html_url}" target="_blank">${r.name}</a>`;
+            repolist.appendChild(li);
+        });
+    } catch (err) {
+        repolist.innerHTML = '<li class="list-group-item text-danger">Could not load repos.</li>';
+    } finally {
+        loadReposBtn.disabled = false;
+        loadReposBtn.textContent = 'Show my repos';
+    }
+}
+
+loadReposBtn.addEventListener('click', loadRepos);
+</script>
+
+        </body>
+</html>
